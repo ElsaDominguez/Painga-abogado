@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bufete Penalista Pérez</title>
+  <meta name="description" content="Bufete Penalista Pérez - Defensa penal, apelaciones y asesoría legal.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Bufete <span>Pérez</span></h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html" class="btn">Contacto</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Defensa penal con experiencia y compromiso</h2>
+        <p>Asesoría en procesos penales, apelaciones, medidas cautelares y defensa en todas las instancias.</p>
+        <p><a href="contacto.html" class="btn primary">Contactar ahora</a></p>
+      </div>
+    </section>
+
+    <section class="container services" id="servicios">
+      <h3>Áreas de práctica</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>Defensa penal</h4>
+          <p>Representación en delitos contra la propiedad, persona y delitos comunes y complejos.</p>
+        </article>
+        <article class="card">
+          <h4>Apelaciones y recursos</h4>
+          <p>Preparación de apelaciones, recursos de casación y revisión judicial.</p>
+        </article>
+        <article class="card">
+          <h4>Asesoría preventiva</h4>
+          <p>Prevención legal, revisión de procedimientos policiales y guía para evitar riesgos legales.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container about-preview">
+      <h3>Sobre el abogado</h3>
+      <p>Lic. Juan Pérez — abogado penalista con X años de experiencia en defensa y litigio. Formación y trayectoria en tribunales locales y regionales.</p>
+      <p><a href="sobre.html" class="btn">Ver más</a></p>
+    </section>
+
+    <section class="container contact-preview">
+      <h3>Contacto rápido</h3>
+      <p>📞 <a href="tel:+50499999999">+504 9999-9999</a> — 📧 <a href="mailto:contacto@bufeteperez.com">contacto@bufeteperez.com</a></p>
+      <p><a href="contacto.html" class="btn">Enviar mensaje</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Bufete Pérez — Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // año en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // toggle móvil simple
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

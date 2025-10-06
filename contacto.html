@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto - Bufete Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="index.html">Bufete <span>Pérez</span></a></h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html" class="btn">Contacto</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <h2>Contacto</h2>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Información</h3>
+        <p>📍 Dirección: Calle Central #123, Ciudad</p>
+        <p>📞 Teléfono: <a href="tel:+50499999999">+504 9999-9999</a></p>
+        <p>📧 Correo: <a href="mailto:contacto@bufeteperez.com">contacto@bufeteperez.com</a></p>
+      </div>
+
+      <div>
+        <h3>Enviar mensaje</h3>
+        <!-- Este formulario abre el cliente de correo del usuario (sin backend).
+             Reemplaza contacto@bufeteperez.com por el correo real. -->
+        <form id="contactForm">
+          <label>
+            Nombre
+            <input type="text" name="nombre" required>
+          </label>
+          <label>
+            Correo
+            <input type="email" name="correo" required>
+          </label>
+          <label>
+            Teléfono (opcional)
+            <input type="text" name="telefono">
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="6" required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Abrir correo</button>
+          <p class="note">Al enviar se abrirá tu cliente de correo para mandar el mensaje (no guarda en la web).</p>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year4"></span> Bufete Pérez</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year4').textContent = new Date().getFullYear();
+
+    // Funcionamiento simple: abrir cliente de correo con mailto:
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.target;
+      const nombre = form.nombre.value.trim();
+      const correo = form.correo.value.trim();
+      const telefono = form.telefono.value.trim();
+      const mensaje = form.mensaje.value.trim();
+      if(!nombre || !correo || !mensaje){ alert('Completa los campos obligatorios.'); return; }
+
+      const subject = encodeURIComponent('Contacto web: ' + nombre);
+      const body = encodeURIComponent(
+        'Nombre: ' + nombre + '\n' +
+        'Correo: ' + correo + '\n' +
+        'Teléfono: ' + telefono + '\n\n' +
+        'Mensaje:\n' + mensaje
+      );
+
+      // Cambia el email abajo por el real
+      const to = 'contacto@bufeteperez.com';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+
+    // mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

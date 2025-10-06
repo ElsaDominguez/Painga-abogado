@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre mí - Bufete Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="index.html">Bufete <span>Pérez</span></a></h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html" class="btn">Contacto</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main class="container about-full">
+    <h2>Sobre el abogado</h2>
+    <p><strong>Lic. Juan Pérez</strong> — Abogado penalista con formación en Derecho Penal y Procesal Penal. Experiencia en representaciones en primera instancia y en tribunales superiores. Ofrezco defensa técnica, atención personalizada y estrategias adaptadas a cada caso.</p>
+
+    <h3>Formación</h3>
+    <ul>
+      <li>Licenciatura en Derecho, Universidad X</li>
+      <li>Curso avanzado en Derecho Penal, Instituto Y</li>
+    </ul>
+
+    <h3>Experiencia</h3>
+    <p>Más de X años representando a clientes en causas penales de distinta complejidad.</p>
+
+    <p><a href="contacto.html" class="btn">Solicitar consulta</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year3"></span> Bufete Pérez</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year3').textContent = new Date().getFullYear();
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

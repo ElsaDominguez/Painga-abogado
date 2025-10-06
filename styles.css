@@ -1,0 +1,110 @@
+/* styles.css - diseño sencillo y responsive */
+:root{
+  --bg:#f7f7f7;
+  --primary:#0b63d5;
+  --dark:#222;
+  --muted:#666;
+  --container:1100px;
+  --radius:8px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--dark);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+.container{
+  width:90%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+/* Header */
+.site-header{
+  background:#ffffff;
+  border-bottom:1px solid #e6e6e6;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:12px 0;
+}
+.logo{
+  margin:0;
+  font-size:20px;
+}
+.logo span{ color:var(--primary) }
+
+.main-nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.main-nav a{ text-decoration:none; color:var(--dark); padding:8px 10px; border-radius:6px; }
+.main-nav a.btn{ border:1px solid var(--primary); color:var(--primary) }
+.main-nav a.btn.primary, .btn.primary{ background:var(--primary); color:#fff; border:1px solid var(--primary) }
+
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  font-size:20px;
+}
+
+/* Hero */
+.hero{
+  background: linear-gradient(90deg, rgba(11,99,213,0.95), rgba(8,75,160,0.95));
+  color:#fff;
+  padding:48px 0;
+}
+.hero .container{ text-align:center; }
+.hero h2{ margin:0 0 10px; font-size:28px; }
+.hero p{ margin:0 0 18px; color:rgba(255,255,255,0.9); }
+
+/* sections */
+.services{ padding:36px 0; }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:14px;
+}
+.card{
+  background:#fff; padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.about-preview, .contact-preview{ background:#fff; margin:20px auto; padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.04) }
+
+/* contact */
+.contact-page{ padding:28px 0; }
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+.contact-grid label{ display:block; margin-bottom:10px; font-size:14px; color:var(--muted) }
+input[type="text"], input[type="email"], textarea{
+  width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; background:#fff; margin-top:6px;
+}
+.btn{ display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; cursor:pointer; }
+.note{ font-size:13px; color:var(--muted); margin-top:8px; }
+
+/* footer */
+.site-footer{ background:#0b0b0b; color:#fff; padding:14px 0; margin-top:30px; text-align:center; }
+
+/* responsive */
+@media (max-width:900px){
+  .cards{ grid-template-columns:repeat(2,1fr); }
+  .contact-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:700px){
+  .cards{ grid-template-columns:1fr; }
+  .nav-toggle{ display:block; }
+  .main-nav{ position:absolute; right:12px; top:64px; background:#fff; border:1px solid #eee; padding:10px; border-radius:8px; display:none; flex-direction:column; width:180px; }
+  .main-nav.open{ display:flex; }
+}
+

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Servicios - Bufete Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><a href="index.html">Bufete <span>Pérez</span></a></h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html" class="btn">Contacto</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Servicios</h2>
+
+    <section class="service-item">
+      <h3>Defensa en juicio oral</h3>
+      <p>Preparación de la defensa, presentación de pruebas y asistencia durante todo el proceso judicial.</p>
+    </section>
+
+    <section class="service-item">
+      <h3>Apelaciones y recursos</h3>
+      <p>Elaboración de recursos, estrategia procesal y representación en instancias superiores.</p>
+    </section>
+
+    <section class="service-item">
+      <h3>Defensa en flagrancia y detenciones</h3>
+      <p>Actuaciones inmediatas ante detenciones y asistencia legal temprana para proteger derechos.</p>
+    </section>
+
+    <section class="service-item">
+      <h3>Asesoría preventiva</h3>
+      <p>Revisión de procedimientos, orientación para evitar delitos y asesoría a empresas y particulares.</p>
+    </section>
+
+    <p><a href="contacto.html" class="btn">Contactar</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year2"></span> Bufete Pérez</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
